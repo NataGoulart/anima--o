@@ -7,7 +7,12 @@ body{
 }
 
 .logo{
-    position: absolute;
+    animation: backInLeft 3s;
+}
+
+
+.escolha {
+    animation: zoomIn 3s;
 }
 
 
