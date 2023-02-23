@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script>
+        
+        var id = null;
+        function myMove() {
+            var elem = document.getElementById("myAnimation");
+            elem.style.opacity = 1 ;
+            var trans=1;
+            var pos = 0;
+            var init = 0
+            var max= 100;
+            clearInterval(id);
+            id = setInterval(frame, 1);
+            function frame() {
+                if (pos <= max && pos >80 && init!= 0) {
+                    pos--;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+                    elem.style.opacity = parseFloat(elem.style.opacity)+0.01;
+                } 
+                else if (pos==0 && init!= 0){
+                    clearInterval(id);
+                }
+                else {
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+                    
+                    if(pos==max)
+                        init++;
+
+                    if((pos/10) == trans && elem.style.opacity>0){
+                        trans++;
+                        elem.style.opacity = elem.style.opacity-0.03;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+  
+</div>
+<body onload="myMove()">
+    
+   <div id="myContainer" >
+        <div class="logo" id ="myAnimation">
+                <img src="logo.png">
+        </div>
+   </div>
+  
+   <div>
+    <table style="width: 50%;  margin: auto;" >
+        <tr>
+            <td colspan="3" style="text-align: center;">
+                 <img src="escolha.png" alt="" >
+            </td>
+        </tr>
+      <tr>
+        <td>
+            <img src="lego.png" alt="">
+        </td>
+        <td>
+            <img src="carta 2 em 1.png" alt="">
+        </td>
+        <td>
+            <img src="urso.png" alt="">
+        </td>
+    </tr>
+
+    </table>
+ </div>
+
+</head>
+<body>
+
+
+
+</html>
